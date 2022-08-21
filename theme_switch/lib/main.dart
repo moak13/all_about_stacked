@@ -5,7 +5,7 @@ import 'package:stacked_themes/stacked_themes.dart';
 import 'core/app/app.locator.dart';
 import 'core/app/app.router.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ThemeManager.initialise();
   await setupLocator();

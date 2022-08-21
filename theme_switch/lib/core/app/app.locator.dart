@@ -20,6 +20,6 @@ Future<void> setupLocator(
       environment: environment, environmentFilter: environmentFilter);
 
 // Register dependencies
-  locator.registerLazySingleton(() => ThemeSwitchService());
+  locator.registerLazySingleton<ThemeSwitchService>(() => ThemeSwitchService());
   locator.registerLazySingleton(() => NavigationService());
 }
