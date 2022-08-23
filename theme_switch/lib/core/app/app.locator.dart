@@ -8,8 +8,7 @@
 
 import 'package:stacked_core/stacked_core.dart';
 import 'package:stacked_services/stacked_services.dart';
-
-import '../services/theme_switch_service.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 final locator = StackedLocator.instance;
 
@@ -20,6 +19,6 @@ Future<void> setupLocator(
       environment: environment, environmentFilter: environmentFilter);
 
 // Register dependencies
-  locator.registerLazySingleton<ThemeSwitchService>(() => ThemeSwitchService());
+  locator.registerSingleton(ThemeService.getInstance());
   locator.registerLazySingleton(() => NavigationService());
 }

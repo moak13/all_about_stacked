@@ -8,6 +8,7 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
     return ViewModelBuilder<SplashViewModel>.reactive(
       viewModelBuilder: () => SplashViewModel(),
       builder: (
@@ -15,11 +16,26 @@ class SplashView extends StatelessWidget {
         SplashViewModel model,
         Widget? child,
       ) {
-        return const Scaffold(
-          body: Center(
-            child: Text(
-              'Splash View',
-            ),
+        return Scaffold(
+          backgroundColor: theme.scaffoldBackgroundColor,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Splash View',
+                style: theme.textTheme.bodyText1?.copyWith(
+                  fontSize: 30,
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              TextButton(
+                onPressed: model.actionToggleTheme,
+                child: const Text('Toggle'),
+              ),
+            ],
           ),
         );
       },

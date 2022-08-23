@@ -1,9 +1,9 @@
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 
 import '../../features/home/home_view.dart';
 import '../../features/splash/splash_view.dart';
-import '../services/theme_switch_service.dart';
 
 @StackedApp(
   routes: [
@@ -16,9 +16,9 @@ import '../services/theme_switch_service.dart';
     ),
   ],
   dependencies: [
-    LazySingleton(
-      classType: ThemeSwitchService,
-      asType: ThemeSwitchService,
+    Singleton(
+      classType: ThemeService,
+      resolveUsing: ThemeService.getInstance,
     ),
     LazySingleton(
       classType: NavigationService,
