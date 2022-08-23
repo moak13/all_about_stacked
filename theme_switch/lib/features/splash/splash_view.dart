@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:theme_switch/generated/l10n.dart';
 
 import 'view_model/splash_viewmodel.dart';
 
@@ -24,7 +25,7 @@ class SplashView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  'Splash View',
+                  S.current.splash_view,
                   style: theme.textTheme.bodyText1?.copyWith(
                     fontSize: 30,
                   ),
@@ -35,7 +36,7 @@ class SplashView extends StatelessWidget {
                 TextButton(
                   onPressed: model.actionToggleTheme,
                   child: Text(
-                    'Toggle',
+                    S.current.toggle,
                     style: theme.textTheme.button,
                   ),
                 ),

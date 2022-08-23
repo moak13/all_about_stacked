@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 
 import 'core/app/app.locator.dart';
 import 'core/app/app.router.dart';
+import 'generated/l10n.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,6 +29,13 @@ class MyApp extends StatelessWidget {
           theme: lightTheme,
           darkTheme: dartTheme,
           themeMode: themeMode,
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
           navigatorKey: StackedService.navigatorKey,
           initialRoute: Routes.splashView,
           onGenerateRoute: StackedRouter().onGenerateRoute,
