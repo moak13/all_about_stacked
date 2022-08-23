@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           navigatorKey: StackedService.navigatorKey,
           initialRoute: Routes.splashView,
           onGenerateRoute: StackedRouter().onGenerateRoute,
+          navigatorObservers: [StackedService.routeObserver],
         );
       },
     );
