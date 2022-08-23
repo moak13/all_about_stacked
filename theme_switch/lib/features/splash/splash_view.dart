@@ -18,24 +18,29 @@ class SplashView extends StatelessWidget {
       ) {
         return Scaffold(
           backgroundColor: theme.scaffoldBackgroundColor,
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(
-                'Splash View',
-                style: theme.textTheme.bodyText1?.copyWith(
-                  fontSize: 30,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Splash View',
+                  style: theme.textTheme.bodyText1?.copyWith(
+                    fontSize: 30,
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              TextButton(
-                onPressed: model.actionToggleTheme,
-                child: const Text('Toggle'),
-              ),
-            ],
+                const SizedBox(
+                  height: 30,
+                ),
+                TextButton(
+                  onPressed: model.actionToggleTheme,
+                  child: Text(
+                    'Toggle',
+                    style: theme.textTheme.button,
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       },
