@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
 import 'screen_type/splash_screen_type.dart';
 
 class SplashView extends StatelessWidget {
